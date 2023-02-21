@@ -17,12 +17,13 @@ public class AddProduct extends JFrame implements ActionListener{
         setTitle("Add Material");
         setSize(750, 500);
         setLayout(new GridBagLayout());
+        // setLayout(new GridLayout(0,1));
         GridBagConstraints c = new GridBagConstraints();
 
         JPanel productPanel = new JPanel();
 
         nameLabel = new JLabel("Material Name: ");
-        nameTextField = new JTextField();
+        nameTextField = new JTextField(30);
         productPanel.add(nameLabel);
         productPanel.add(nameTextField);
 
@@ -32,7 +33,7 @@ public class AddProduct extends JFrame implements ActionListener{
         productPanel.add(descTextArea);
 
         priceLabel = new JLabel("Price: ");
-        priceTextField = new JTextField();
+        priceTextField = new JTextField(5);
         productPanel.add(priceLabel);
         productPanel.add(priceTextField);
         add(productPanel);
