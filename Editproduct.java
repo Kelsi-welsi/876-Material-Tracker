@@ -31,6 +31,21 @@ public class Editproduct extends JFrame implements ActionListener{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
+
+        JMenuBar mm = new JMenuBar();
+        JMenu m1 = new JMenu("Manage Material");
+        JMenu m2 = new JMenu("Help");
+        mm.add(m1);
+        mm.add(m2);
+        JMenuItem m11 = new JMenuItem("Add Material");
+        JMenuItem m22 = new JMenuItem("Edit Material");
+        JMenuItem m33 = new JMenuItem("Delete Material");
+        m11.addActionListener(new addButtonListener());
+        m33.addActionListener(new deleteButtonListener());
+
+        add(m11);
+        add(m22);
+        add(m33);
         
         c.weighty = 0.05;
         c.weightx = 0.05;
@@ -113,5 +128,18 @@ public class Editproduct extends JFrame implements ActionListener{
         }
     }
     }
- 
+    public  class addButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new AddProduct();
+        }
+    }
+    
+    public  class deleteButtonListener implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            new delete();
+        }
+           
+        }
 }
