@@ -80,7 +80,7 @@ public class delete extends JFrame implements ActionListener{
 public  class editButtonListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
-        new Editproduct();
+        new edit();
     }
        
     }
