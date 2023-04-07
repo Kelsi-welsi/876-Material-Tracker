@@ -35,10 +35,12 @@ CREATE TABLE shipping_details (
 -- Create a table for projects
 CREATE TABLE projects (
   project_id INT NOT NULL AUTO_INCREMENT,
+  user_id INT,
   project_name VARCHAR(50) NOT NULL,
   project_description TEXT,
   project_status ENUM('Approved', 'Pending', 'Not Approved') NOT NULL,
-  PRIMARY KEY (project_id)
+  PRIMARY KEY (project_id),
+   FOREIGN KEY(user_id) REFERENCES login_credentials(user_id)
 );
 
 -- Create the materials table
@@ -73,11 +75,11 @@ VALUES
   ('Client B', '456 High St., Anytown USA', '2023-04-03', 35.00);
 
 -- Insert sample data into the projects table
-INSERT INTO projects (project_name, project_description, project_status)
+INSERT INTO projects (user_id, project_name, project_description, project_status)
 VALUES
-  ('Project 1', 'Description of Project 1', 'Approved'),
-  ('Project 2', 'Description of Project 2', 'Pending'),
-  ('Project 3', 'Description of Project 3', 'Not Approved');
+  (1, 'Project 1', 'Description of Project 1', 'Approved'),
+  (1, 'Project 2', 'Description of Project 2', 'Pending'),
+  (2, 'Project 3', 'Description of Project 3', 'Not Approved');
 
 INSERT INTO materials
 VALUES
