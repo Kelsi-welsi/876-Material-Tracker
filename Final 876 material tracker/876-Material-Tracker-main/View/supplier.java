@@ -28,7 +28,7 @@ public class supplier extends JFrame {
         // add action listeners to the buttons
         editMaterialsButton.addActionListener(e -> openEditMaterialsDialog());
         talkToUserButton.addActionListener(e -> openChatWindow());
-        search.addActionListener(e -> matSearch());
+        search.addActionListener(e -> Search());
         
         // create a panel to hold the buttons
         JPanel buttonPanel = new JPanel();
@@ -55,7 +55,7 @@ public class supplier extends JFrame {
         new delete();
     }
 
-    private void matSearch() {
+    private void Search() {
         // code to open the "Edit Materials" dialog
         new MaterialSearchApp();
     }
